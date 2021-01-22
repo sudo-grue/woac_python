@@ -11,8 +11,8 @@ Create a class object named 'Sphere'
     - set_radius()      : sets (updates) the radius
 
   - When radius is updated, resulting surface area and volume will change
-  - On invalid initialization input, generate a None object
   - print() should yield the current radius
+  - if set_radius() receives invalid input, do not update values
 
 Note:
   To standardize calculations pi will be calculated to a precision of 2
@@ -38,8 +38,10 @@ class Sphere():
     - get_radius()
     - set_radius()
     """
+    pi = 3.14
+
     def __init__(self, radius):
-        self.pi = 3.14
+        pass
 
 
 if __name__ == '__main__':
