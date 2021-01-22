@@ -10,6 +10,7 @@ Create a class object named 'Sphere'
     - set_radius() which changes the radius already set
   - When radius is updated, resulting surface area and volume will change
   - On invalid initialization input, generate a None object
+  - print() should yield the current radius
 
 Note:
   To standardize calculations pi will be calculated to a precision of 2
