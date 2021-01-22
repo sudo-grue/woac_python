@@ -5,9 +5,11 @@ TASK:
 Create a class object named 'Sphere'
   - Takes one (1) initializing argument float() or int() representing radius
   - Must have three (3) methods
-    - get_surface_area() which returns surface area of sphere
-    - get_volume() which returns volume of sphere
-    - set_radius() which changes the radius already set
+    - get_surface_area(): returns surface area of sphere
+    - get_volume()      : returns volume of sphere
+    - get_radius()      : returns the numeric value stored in radius
+    - set_radius()      : sets (updates) the radius
+
   - When radius is updated, resulting surface area and volume will change
   - On invalid initialization input, generate a None object
   - print() should yield the current radius
