@@ -18,8 +18,8 @@ Note:
   To standardize calculations pi will be calculated to a precision of 2
 
 INFO:
-  Surface area formula: 4 * pi * r ^ 2
-  Volume formula      : 4/3 * pi * r ^ 3
+  Surface area formula: 4 * pi * (r ^ 2)
+  Volume formula      : (4/3) * pi * (r ^ 3)
 """
 
 
@@ -35,6 +35,7 @@ class Sphere():
     Sphere class containing three (3) methods:
     - get_surface_area()
     - get_volume()
+    - get_radius()
     - set_radius()
     """
     def __init__(self, radius):
