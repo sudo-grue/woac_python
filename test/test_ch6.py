@@ -41,7 +41,7 @@ class test_challenge6(unittest.TestCase):
         Tests if surface area calculated correctly 4 * pi * (r ^ 2)
         using the get_surface_area() method
         """
-        self.assertAlmostEqual(self.sphere.get_surface_area(), 200.96,
+        self.assertAlmostEqual(self.sphere.get_surface_area(), 314.0,
                                places=2)
 
     def test_print(self):
@@ -57,26 +57,23 @@ class test_challenge6(unittest.TestCase):
         self.assertAlmostEqual(self.sphere.get_volume(), 523.33, places=2)
 
     def test_invalid_input(self):
-        test_sphere = Circle('a')
-        self.assertIsNone(test_sphere)
+        self.sphere.set_radius('a')
+        self.assertEqual(self.sphere.get_radius(), 5)
 
-        test_sphere = Circle(-1)
-        self.assertIsNone(test_sphere)
+        self.sphere.set_radius(-1)
+        self.assertEqual(self.sphere.get_radius(), 5)
 
-        test_sphere = Circle(0)
-        self.assertIsNone(test_sphere)
+        self.sphere.set_radius(float("nan"))
+        self.assertEqual(self.sphere.get_radius(), 5)
 
-        test_sphere = Circle(float("nan"))
-        self.assertIsNone(test_sphere)
-
-        test_sphere = Circle(None)
-        self.assertIsNone(test_sphere)
+        self.sphere.set_radius(None)
+        self.assertEqual(self.sphere.get_radius(), 5)
 
     def test_valid_input(self):
-        test_sphere = Circle(5.5)
+        test_sphere = Sphere(5.5)
         self.assertIsNotNone(test_sphere)
 
-        test_sphere = Circle(0.000001)
+        test_sphere = Sphere(0.000001)
         self.assertIsNotNone(test_sphere)
 
 
