@@ -32,7 +32,7 @@ def main():
 
 class Sphere():
     """
-    Sphere class containing three (3) methods:
+    Sphere class containing four (4) methods:
     - get_surface_area()
     - get_volume()
     - get_radius()
