@@ -40,7 +40,6 @@ class Sphere():
     """
     def __init__(self, radius):
         self.pi = 3.14
-        pass
 
 
 if __name__ == '__main__':
