@@ -37,14 +37,14 @@ def main():
         print(f"print_expanded(value) -> {print_expanded(value)}")
 
 
-def factorial(num):
+def factorial(num: int) -> int:
     """factorial(int) -> int
     Returns factorial result of int(num) else 0
     """
     pass
 
 
-def print_expanded(num):
+def print_expanded(num: int) -> str:
     """print_expanded(int) -> str
     Returns a decending string of the calculations conducted
     and the resulting value.

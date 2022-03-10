@@ -4,7 +4,7 @@ Challenge 6 Module
 TASK:
 Create a class object named 'Sphere'
   - Takes one (1) initializing argument float() or int() representing radius
-  - Must have three (3) methods
+  - Must have three (4) methods
     - get_surface_area(): returns surface area of sphere
     - get_volume()      : returns volume of sphere
     - get_radius()      : returns the numeric value stored in radius
@@ -21,6 +21,8 @@ INFO:
   Surface area formula: 4 * pi * (r ^ 2)
   Volume formula      : (4/3) * pi * (r ^ 3)
 """
+
+from typing import Union
 
 
 def main():
@@ -40,7 +42,7 @@ class Sphere():
     """
     pi = 3.14
 
-    def __init__(self, radius):
+    def __init__(self, radius: Union[int, float]):
         pass
 
 
