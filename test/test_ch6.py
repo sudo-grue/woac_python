@@ -56,7 +56,10 @@ class test_challenge6(unittest.TestCase):
         """
         self.assertAlmostEqual(self.sphere.get_volume(), 523.33, places=2)
 
-    def test_invalid_input(self):
+    def test_invalid_edit(self):
+        """
+        Tests invalid set method confirms input before changes
+        """
         self.sphere.set_radius('a')
         self.assertEqual(self.sphere.get_radius(), 5)
 
@@ -70,11 +73,27 @@ class test_challenge6(unittest.TestCase):
         self.assertEqual(self.sphere.get_radius(), 5)
 
     def test_valid_input(self):
+        """
+        Tests more obscure inputs are valid
+        """
         test_sphere = Sphere(5.5)
         self.assertIsNotNone(test_sphere)
 
         test_sphere = Sphere(0.000001)
         self.assertIsNotNone(test_sphere)
+
+    def test_invalid_creation(self):
+        """
+        Tests that no object created on invalid input
+        """
+        test_sphere = Sphere(None)
+        self.assertIsNone(test_sphere)
+
+        test_sphere = Sphere(float("nan"))
+        self.assertIsNone(test_sphere)
+
+        test_sphere = Sphere(-1)
+        self.assertIsNone(test_sphere)
 
 
 if __name__ == '__main__':
