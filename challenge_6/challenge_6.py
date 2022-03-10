@@ -4,7 +4,7 @@ Challenge 6 Module
 TASK:
 Create a class object named 'Sphere'
   - Takes one (1) initializing argument float() or int() representing radius
-  - Must have three (4) methods
+  - Must have four (4) methods
     - get_surface_area(): returns surface area of sphere
     - get_volume()      : returns volume of sphere
     - get_radius()      : returns the numeric value stored in radius
