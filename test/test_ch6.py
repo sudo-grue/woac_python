@@ -27,14 +27,14 @@ class test_challenge6(unittest.TestCase):
         """
         Tests if initialize value handled correctly
         """
-        self.assertEqual(self.sphere.get_radius(), 5)
+        self.assertEqual(self.sphere.radius, 5)
 
     def test_set_radius(self):
         """
         Tests if setter updates radius
         """
-        self.sphere.set_radius(4)
-        self.assertEqual(self.sphere.get_radius(), 4)
+        self.sphere.radius = 4
+        self.assertEqual(self.sphere.radius, 4)
 
     def test_get_area(self):
         """
@@ -60,17 +60,17 @@ class test_challenge6(unittest.TestCase):
         """
         Tests invalid set method confirms input before changes
         """
-        self.sphere.set_radius('a')
-        self.assertEqual(self.sphere.get_radius(), 5)
+        self.sphere.radiusi = 'a'
+        self.assertEqual(self.sphere.radius, 5)
 
-        self.sphere.set_radius(-1)
-        self.assertEqual(self.sphere.get_radius(), 5)
+        self.sphere.radius = -1
+        self.assertEqual(self.sphere.radius, 5)
 
-        self.sphere.set_radius(float("nan"))
-        self.assertEqual(self.sphere.get_radius(), 5)
+        self.sphere.radius = float("nan")
+        self.assertEqual(self.sphere.radius, 5)
 
-        self.sphere.set_radius(None)
-        self.assertEqual(self.sphere.get_radius(), 5)
+        self.sphere.radius = None
+        self.assertEqual(self.sphere.radius, 5)
 
     def test_valid_input(self):
         """
@@ -86,14 +86,13 @@ class test_challenge6(unittest.TestCase):
         """
         Tests that no object created on invalid input
         """
-        test_sphere = Sphere(None)
-        self.assertIsNone(test_sphere)
-
-        test_sphere = Sphere(float("nan"))
-        self.assertIsNone(test_sphere)
-
-        test_sphere = Sphere(-1)
-        self.assertIsNone(test_sphere)
+        with self.assertRaises(ValueError):
+            Sphere(None)
+        with self.assertRaises(ValueError):
+            Sphere(float("nan"))
+        with self.assertRaises(ValueError):
+            Sphere(-1)
+        
 
 
 if __name__ == '__main__':
