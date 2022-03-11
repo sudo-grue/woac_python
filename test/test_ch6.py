@@ -11,7 +11,7 @@ from math import isnan
 from challenge_6.challenge_6 import Sphere
 
 
-class test_challenge6(unittest.TestCase):
+class test_Sphere(unittest.TestCase):
     """
     Tests functions created in Challenge 6
     """
