@@ -24,6 +24,13 @@ class test_challenge6(unittest.TestCase):
         """
         self.assertEqual(self.sphere.pi, 3.14)
 
+    def test_pi_class_attribute(self):
+        """
+        Tests to ensure pi is a class attribute and read only
+        """
+        with self.assertRaises(AttributeError):
+            self.sphere.pi = 5
+
     def test_get_radius(self):
         """
         Tests if initialize value handled correctly
