@@ -5,13 +5,13 @@ Challenge 6 Module
 TASK:
 Create a class object named 'Sphere'
   - Takes one (1) initializing argument float() or int() representing radius
-  - radius will be stored as a private ('__radius') instance attribute
+  - radius will be stored as a private __radius instance attribute
   - Must have following methods
     - get_surface_area(): returns surface area of sphere
     - get_volume()      : returns volume of sphere
     - radius()          : use @property decorator as getter 
     - radius()          : use @radius.setter decorator as setter
-    - __init__ ()       : used when "creation" of object happens
+    - __init__()        : used when "creation" of object happens
     - __lt__()          : less than method for comparisons
     - __le__()          : less than or equal...
     - __eq__()          : equal
@@ -23,13 +23,13 @@ Create a class object named 'Sphere'
     - "secret" method   : prevents additional members (HINT: class attribute)
   BONUS:
     - __add__()         : Returns Sphere + (int, float, Sphere) -> (int, float)
-    - __radd__()        : Returns (int, float, Sphere) + Sphere -> (int, float)
+    - __radd__()        : Returns (int, float) + Sphere -> (int, float)
     - __sub__()         : Returns Sphere - (int, float, Sphere) -> (int, float)
-    - __rsub__()        : Returns (int, float, Sphere) - Sphere -> (int, float)
+    - __rsub__()        : Returns (int, float) - Sphere -> (int, float)
 
   - When radius is updated, resulting surface area and volume will change
   - print() should yield the current radius
-  - if set_radius() receives invalid input, do not update values
+  - object.radius setter will not change value on invalid input
   - On creation, raise ValueError if invalid input
 
 Note:
