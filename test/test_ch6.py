@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Testing suite for Challenge 6 
 
@@ -41,14 +42,15 @@ class test_challenge6(unittest.TestCase):
         Tests if surface area calculated correctly 4 * pi * (r ^ 2)
         using the get_surface_area() method
         """
-        self.assertAlmostEqual(self.sphere.get_surface_area(), 314.0,
-                               places=2)
+        self.assertAlmostEqual(self.sphere.get_surface_area(), 314.0, places=2)
 
     def test_print(self):
         """
         Tests if interface for print() created
         """
         self.assertEqual(self.sphere.__str__(), '5')
+        self.sphere.radius = 4
+        self.assertEqual(self.sphere.__str__(), '4')
 
     def test_get_volume(self):
         """
@@ -92,6 +94,12 @@ class test_challenge6(unittest.TestCase):
             Sphere(float("nan"))
         with self.assertRaises(ValueError):
             Sphere(-1)
+
+    def test_private_attr(self):
+        """
+        Tests that private attr __radius exists
+        """
+        self.assertTrue(self.sphere, '_Sphere__radius')
 
     def test_string(self):
         """
