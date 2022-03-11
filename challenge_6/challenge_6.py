@@ -5,7 +5,7 @@ Challenge 6 Module
 TASK:
 Create a class object named 'Sphere'
   - Takes one (1) initializing argument float() or int() representing radius
-  - radius will be stored as a private ('__') instance attribute
+  - radius will be stored as a private ('__radius') instance attribute
   - Must have following methods
     - get_surface_area(): returns surface area of sphere
     - get_volume()      : returns volume of sphere
