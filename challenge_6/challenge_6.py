@@ -5,7 +5,7 @@ TASK:
 Create a class object named 'Sphere'
   - Takes one (1) initializing argument float() or int() representing radius
   - radius will be stored as a private ('__') instance attribute
-  - Must have five (5) methods
+  - Must have following methods
     - get_surface_area(): returns surface area of sphere
     - get_volume()      : returns volume of sphere
     - radius()          : use @property decorator as getter 
