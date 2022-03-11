@@ -11,9 +11,9 @@ import unittest
 from challenge_5.challenge_5 import factorial, print_expanded
 
 
-class test_challenge5(unittest.TestCase):
+class test_factorial(unittest.TestCase):
     """
-    Tests functions created in Challenge 5
+    Tests factorial function in Challenge 5
     """
     def test_fact_lt_one(self):
         """
@@ -44,6 +44,10 @@ class test_challenge5(unittest.TestCase):
         self.assertEqual(factorial(9), 362880)
         self.assertEqual(factorial(10), 3628800)
 
+class test_expanded(unittest.TestCase):
+    """
+    Tests print_expanded function in Challenge 5
+    """
     def test_expanded_lt_one(self):
         """
         Tests response for values less than one (1)
