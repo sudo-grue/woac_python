@@ -69,16 +69,20 @@ class test_class_Sphere(unittest.TestCase):
         """
         Tests invalid set method confirms input before changes
         """
-        self.sphere.radius = 'a'
+        with self.assertRaises(TypeError):
+            self.sphere.radius = 'a'
         self.assertEqual(self.sphere.radius, 5)
 
-        self.sphere.radius = -1
+        with self.assertRaises(ValueError):
+            self.sphere.radius = -1
         self.assertEqual(self.sphere.radius, 5)
 
-        self.sphere.radius = float("nan")
+        with self.assertRaises(ValueError):
+            self.sphere.radius = float("nan")
         self.assertEqual(self.sphere.radius, 5)
 
-        self.sphere.radius = None
+        with self.assertRaises(TypeError):
+            self.sphere.radius = None
         self.assertEqual(self.sphere.radius, 5)
 
     def test_valid_input(self):
@@ -95,7 +99,7 @@ class test_class_Sphere(unittest.TestCase):
         """
         Tests that no object created on invalid input
         """
-        with self.assertRaises(ValueError):
+        with self.assertRaises(TypeError):
             Sphere(None)
         with self.assertRaises(ValueError):
             Sphere(float("nan"))
@@ -104,9 +108,9 @@ class test_class_Sphere(unittest.TestCase):
 
     def test_private_attr(self):
         """
-        Tests that private attr __radius exists
+        Tests that private attr _radius exists
         """
-        self.assertTrue(self.sphere, '_Sphere__radius')
+        self.assertTrue(hasattr(self.sphere, '_radius'))
 
     def test_string(self):
         """
