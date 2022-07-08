@@ -151,6 +151,8 @@ class test_class_Sphere(unittest.TestCase):
             self.sphere < 'a'
         with self.assertRaises(TypeError):
             'a' < self.sphere
+        with self.assertRaises(TypeError):
+            self.sphere < None
 
     def test_equal(self):
         """
@@ -165,8 +167,12 @@ class test_class_Sphere(unittest.TestCase):
         self.assertTrue(self.sphere == 5.0)
         self.assertFalse(self.sphere == 4.4)
         self.assertFalse(self.sphere == float("nan"))
-        self.assertFalse(self.sphere == 'a')
-        self.assertFalse(self.sphere == None)
+        with self.assertRaises(TypeError):
+            self.sphere < 'a'
+        with self.assertRaises(TypeError):
+            'a' < self.sphere
+        with self.assertRaises(TypeError):
+            self.sphere < None
 
     def test_less_equal(self):
         """
@@ -264,6 +270,15 @@ class test_class_Sphere(unittest.TestCase):
         self.assertTrue(self.sphere != 'a')
         self.assertTrue(self.sphere != None)
 
+        with self.assertRaises(TypeError):
+            self.sphere >= None
+        with self.assertRaises(TypeError):
+            None >= self.sphere
+        with self.assertRaises(TypeError):
+            self.sphere >= 'a'
+        with self.assertRaises(TypeError):
+            'a' >= self.sphere
+
     def test_add(self):
         """
         Tests '+' of Sphere to (Sphere, int, float)
@@ -313,6 +328,8 @@ class test_class_Sphere(unittest.TestCase):
         Tests '-' of (int, sphere) to Sphere
         """
         self.assertEqual(8 - self.sphere, 3)
+        test_sphere = Sphere(17)
+        self.assertEqual(95 - test_sphere, 78)
 
     def test_typing(self):
         """
