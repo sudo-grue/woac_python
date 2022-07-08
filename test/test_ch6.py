@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Testing suite for Challenge 6 
+Testing suite for Challenge 6
 
 Executed with `python3 -m unittest discover -s test -v` from root dir
 which targets ./test/ directory
@@ -191,7 +191,7 @@ class test_class_Sphere(unittest.TestCase):
             self.sphere <= 'a'
         with self.assertRaises(TypeError):
             'a' <= self.sphere
-    
+
     def test_greater(self):
         """
         Tests '>' of Sphere to (Sphere, int, float)
@@ -310,6 +310,35 @@ class test_class_Sphere(unittest.TestCase):
         """
         self.assertEqual(8 - self.sphere, 3)
 
+    def test_typing(self):
+        """
+        Tests if proper type is returned
+        """
+        self.assertIsInstance(self.sphere, Sphere)
+        self.assertIsInstance(self.sphere.radius, int)
+
+        self.assertIsInstance(self.sphere.radius + 5, int)
+        self.assertIsInstance(self.sphere.radius + 3.8, float)
+        self.assertIsInstance(5 + self.sphere.radius, int)
+        self.assertIsInstance(3.8 + self.sphere.radius, float)
+
+        self.assertNotIsInstance(self.sphere.radius + 5, float)
+        self.assertNotIsInstance(self.sphere.radius + 3.8, int)
+        self.assertNotIsInstance(5 + self.sphere.radius, float)
+        self.assertNotIsInstance(3.8 + self.sphere.radius, int)
+
+        self.sphere.radius = 3.8
+        self.assertIsInstance(self.sphere.radius, float)
+
+        self.assertIsInstance(self.sphere.radius + 5, float)
+        self.assertIsInstance(self.sphere.radius + 3.8, float)
+        self.assertIsInstance(5 + self.sphere.radius, float)
+        self.assertIsInstance(3.8 + self.sphere.radius, float)
+
+        self.assertNotIsInstance(self.sphere.radius + 5, int)
+        self.assertNotIsInstance(self.sphere.radius + 3.8, int)
+        self.assertNotIsInstance(5 + self.sphere.radius, int)
+        self.assertNotIsInstance(3.8 + self.sphere.radius, int)
 
 if __name__ == '__main__':
     unittest.main()
